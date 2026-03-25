@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Vista | Luxury Stays</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Luna<span>Vista</span></div>
+        <div class="nav-main">
+            <div class="nav-links">
+                <a href="index.html" class="btn-primary">Home</a>
+                <a href="rooms.html" class="btn-primary">Rooms</a>
+                <a href="summary.html" class="btn-primary">Bookings (<span id="booking-count">0</span>)</a>
+                <a href="login.html" class="btn-secondary">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="booking-modal" class="modal-overlay">
+        <div class="container" style="max-width: 450px; text-align: center;">
+            <h2 id="modal-title">Book This Room?</h2>
+            <p id="modal-msg"></p>
+            <div id="nights-box" style="display:none; margin: 1.5rem 0;">
+                <label>Nights: </label>
+                <input type="number" id="stay-nights" value="1" min="1" max="30" style="width: 80px; padding: 0.5rem;">
+            </div>
+            <div id="guests-box" style="display:none; margin: 1.5rem 0;">
+                <label>Guests: </label>
+                <input type="number" id="stay-guests" value="2" min="1" max="6" style="width: 80px; padding: 0.5rem;">
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button id="modal-yes" class="btn-primary" style="flex:1;">Book Now</button>
+                <button id="modal-no" class="btn-secondary" style="flex:1;">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="home" class="page active">
+            <input type="text" id="home-search" class="search-bar" placeholder="Find your perfect stay...">
+
+            <div class="carousel-container">
+                <button id="prev-btn" class="carousel-btn">&#10094;</button>
+                <img id="carousel-img" class="carousel-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200" alt="Luna Vista Resort">
+                <button id="next-btn" class="carousel-btn">&#10095;</button>
+                <div class="carousel-overlay">
+                    <h1>Welcome to Paradise</h1>
+                    <p>Luxury accommodations with breathtaking views.</p>
+                    <a href="rooms.html" class="btn-primary">Explore Rooms</a>
+                </div>
+            </div>
+            <div id="banner-thumbs" class="banner-thumbs">
+                <img class="thumb active" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=120" onclick="goToBanner(0)" alt="Banner 1">
+                <img class="thumb" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=120" onclick="goToBanner(1)" alt="Banner 2">
+                <img class="thumb" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=120" onclick="goToBanner(2)" alt="Banner 3">
+            </div>
+
+            <section class="featured-section">
+                <h2 class="section-title">🏆 Featured Rooms</h2>
+                <div class="featured-carousel">
+                    <button id="featured-prev" class="product-carousel-btn" aria-label="Previous featured">&#10094;</button>
+                    <div id="featured-track" class="featured-track"></div>
+                    <button id="featured-next" class="product-carousel-btn" aria-label="Next featured">&#10095;</button>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <div id="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>

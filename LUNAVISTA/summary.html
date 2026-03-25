@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Vista | Your Bookings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Luna<span>Vista</span></div>
+        <div class="nav-main">
+            <div class="nav-links">
+                <a href="index.html" class="btn-primary">Home</a>
+                <a href="rooms.html" class="btn-primary">Rooms</a>
+                <a href="summary.html" class="btn-primary">Bookings (<span id="booking-count">0</span>)</a>
+                <a href="login.html" class="btn-secondary">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="summary" class="page active">
+            <h1>🌴 Your Reservations</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="border-bottom: 2px solid var(--glass-border);">Room</th>
+                        <th style="border-bottom: 2px solid var(--glass-border);">Nights</th>
+                        <th style="border-bottom: 2px solid var(--glass-border);">Guests</th>
+                        <th style="border-bottom: 2px solid var(--glass-border);">Total</th>
+                        <th style="border-bottom: 2px solid var(--glass-border);">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="booking-items"></tbody>
+            </table>
+            <div style="text-align: right; margin-top: 2rem;">
+                <h2>Grand Total: <span id="total-price">₱0.00</span></h2>
+                <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1rem;">
+                    <button onclick="clearBookings()" class="btn-secondary" style="padding: 0.75rem 1.5rem;">Clear All</button>
+                    <button class="btn-primary" style="padding: 0.75rem 1.5rem;" onclick="alert('Proceeding to payment... 🌙')">Confirm Booking</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
