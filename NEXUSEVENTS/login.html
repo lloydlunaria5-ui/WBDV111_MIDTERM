@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Events | Login</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="login">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="./index.html">Nexus Events</a>
+      <nav class="nav-links">
+        <a href="./index.html" data-nav="home">Home</a>
+        <a href="./events.html" data-nav="events">Events</a>
+        <a href="./tickets.html" data-nav="tickets">Tickets</a>
+        <a href="./venue.html" data-nav="venue">Venue</a>
+        <a href="./contact.html" data-nav="contact">Contact</a>
+        <a href="./login.html" data-nav="login">Login</a>
+        <a href="./admin-login.html" data-nav="admin">Admin</a>
+      </nav>
+      <button class="btn btn--ghost" type="button" data-party-toggle>Party Mode: OFF</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero login-hero">
+      <div>
+        <h1>Welcome Back</h1>
+        <p>Access your Nexus account to manage tickets, view saved events, and unlock exclusive member perks.</p>
+        <div class="tag-row">
+          <span class="tag">Tickets</span>
+          <span class="tag">Saved Events</span>
+          <span class="tag">Member Perks</span>
+        </div>
+      </div>
+      <div class="panel auth-card login-card">
+        <h2 style="margin-top:0;">Member Login</h2>
+        <form class="form-grid" data-login-form>
+          <label>
+            Email
+            <input type="email" placeholder="you@email.com" required autocomplete="email" data-login-email>
+          </label>
+          <label>
+            Password
+            <input type="password" placeholder="••••••••" required autocomplete="current-password" data-login-pass>
+          </label>
+          <div class="form-row">
+            <label class="checkbox">
+              <input type="checkbox">
+              Remember me
+            </label>
+            <a class="link" href="./contact.html">Forgot password?</a>
+          </div>
+          <button class="btn btn--big" type="submit">Sign In</button>
+          <p class="form-note">Don't have an account? <a href="./index.html#register">Register here</a></p>
+          <p class="status" data-login-status></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+    <footer class="footer">
+    <div class="container footer-inner">
+      <p class="pill">Nexus Events · Member Access</p>
+      <p>© <span data-year></span> Nexus Events. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
