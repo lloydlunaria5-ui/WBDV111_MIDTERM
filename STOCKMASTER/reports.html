@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockMaster - Generate Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>StockMaster</h2>
+                <span>IMS</span>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn" data-page="dashboard">
+                    <span class="icon">📊</span> Dashboard
+                </button>
+                <button class="nav-btn" data-page="stocklist">
+                    <span class="icon">📦</span> Stock List
+                </button>
+                <button class="nav-btn" data-page="scan">
+                    <span class="icon">📷</span> Scan/Input
+                </button>
+                <button class="nav-btn" data-page="alerts">
+                    <span class="icon">🔔</span> Supplier Alerts
+                </button>
+                <button class="nav-btn active" data-page="reports">
+                    <span class="icon">📈</span> Generate Report
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="nav-btn settings-btn">
+                    <span class="icon">⚙️</span> Settings
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Generate Reports</h1>
+                <div class="actions">
+                    <div class="user-profile">
+                        <span>Admin</span>
+                        <div class="avatar">A</div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="date-range-picker">
+                <label>Date Range:</label>
+                <input type="date" class="date-input" value="2024-05-01">
+                <span>to</span>
+                <input type="date" class="date-input" value="2024-05-31">
+            </section>
+
+            <section class="reports-grid">
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-icon inventory">📦</div>
+                        <div>
+                            <div class="report-title">Inventory Report</div>
+                            <div style="font-size: 0.75rem; color: var(--gray-500);">Complete stock overview</div>
+                        </div>
+                    </div>
+                    <div class="report-desc">Generate a comprehensive report of all inventory items including stock levels, categories, and valuations.</div>
+                    <div class="report-actions">
+                        <button class="btn-generate">Generate</button>
+                        <button class="btn-download">📥</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-icon sales">💰</div>
+                        <div>
+                            <div class="report-title">Stock Movement</div>
+                            <div style="font-size: 0.75rem; color: var(--gray-500);">In/Out tracking</div>
+                        </div>
+                    </div>
+                    <div class="report-desc">Track all stock movements including additions, removals, and transfers with timestamps.</div>
+                    <div class="report-actions">
+                        <button class="btn-generate">Generate</button>
+                        <button class="btn-download">📥</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-icon supplier">🚚</div>
+                        <div>
+                            <div class="report-title">Supplier Report</div>
+                            <div style="font-size: 0.75rem; color: var(--gray-500);">Supplier performance</div>
+                        </div>
+                    </div>
+                    <div class="report-desc">Analyze supplier performance, delivery times, and product quality metrics.</div>
+                    <div class="report-actions">
+                        <button class="btn-generate">Generate</button>
+                        <button class="btn-download">📥</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-icon audit">🔍</div>
+                        <div>
+                            <div class="report-title">Audit Report</div>
+                            <div style="font-size: 0.75rem; color: var(--gray-500);">Compliance & audit</div>
+                        </div>
+                    </div>
+                    <div class="report-desc">Detailed audit trail of all system activities and inventory changes for compliance.</div>
+                    <div class="report-actions">
+                        <button class="btn-generate">Generate</button>
+                        <button class="btn-download">📥</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="report-preview" style="display: none;">
+                <div class="preview-header">
+                    <h3 class="preview-title">Report Preview</h3>
+                    <button class="btn-secondary">Close Preview</button>
+                </div>
+                <div class="chart-placeholder">
+                    <div class="chart-icon">📊</div>
+                    <p>Report preview will appear here after generation</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockMaster - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>StockMaster</h2>
+                <span>IMS</span>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-page="dashboard">
+                    <span class="icon">📊</span> Dashboard
+                </button>
+                <button class="nav-btn" data-page="stocklist">
+                    <span class="icon">📦</span> Stock List
+                </button>
+                <button class="nav-btn" data-page="scan">
+                    <span class="icon">📷</span> Scan/Input
+                </button>
+                <button class="nav-btn" data-page="alerts">
+                    <span class="icon">🔔</span> Supplier Alerts
+                </button>
+                <button class="nav-btn" data-page="reports">
+                    <span class="icon">📈</span> Generate Report
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="nav-btn settings-btn">
+                    <span class="icon">⚙️</span> Settings
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Dashboard</h1>
+                <div class="actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search items..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <button class="export-btn">Export CSV</button>
+                    <div class="user-profile">
+                        <span>Admin</span>
+                        <div class="avatar">A</div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon total">📦</div>
+                    <div class="stat-info">
+                        <h3>1,274</h3>
+                        <p>Total Items</p>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-icon low">⚠️</div>
+                    <div class="stat-info">
+                        <h3>23</h3>
+                        <p>Low Stock</p>
+                    </div>
+                </div>
+                <div class="stat-card critical">
+                    <div class="stat-icon crit">🚨</div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Critical</p>
+                    </div>
+                </div>
+                <div class="stat-card value">
+                    <div class="stat-icon money">💰</div>
+                    <div class="stat-info">
+                        <h3>₱45,230</h3>
+                        <p>Inventory Value</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header">
+                    <h3>Recent Stock Activity</h3>
+                    <div class="filters">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">In Stock</button>
+                        <button class="filter-btn">Low Stock</button>
+                        <button class="filter-btn">Critical</button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="stockTable">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>SKU</th>
+                                <th>Stock Level</th>
+                                <th>Status</th>
+                                <th>Last Updated</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

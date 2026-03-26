@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockMaster - Stock List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>StockMaster</h2>
+                <span>IMS</span>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn" data-page="dashboard">
+                    <span class="icon">📊</span> Dashboard
+                </button>
+                <button class="nav-btn active" data-page="stocklist">
+                    <span class="icon">📦</span> Stock List
+                </button>
+                <button class="nav-btn" data-page="scan">
+                    <span class="icon">📷</span> Scan/Input
+                </button>
+                <button class="nav-btn" data-page="alerts">
+                    <span class="icon">🔔</span> Supplier Alerts
+                </button>
+                <button class="nav-btn" data-page="reports">
+                    <span class="icon">📈</span> Generate Report
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="nav-btn settings-btn">
+                    <span class="icon">⚙️</span> Settings
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Stock List</h1>
+                <div class="actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search items..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <button class="export-btn">Export CSV</button>
+                    <div class="user-profile">
+                        <span>Admin</span>
+                        <div class="avatar">A</div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content-section">
+                <div class="stock-controls">
+                    <button class="add-stock-btn">+ Add New Item</button>
+                    <select class="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="parts">Parts</option>
+                        <option value="general">General</option>
+                    </select>
+                </div>
+                
+                <div class="table-container">
+                    <table id="stockTable">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>SKU</th>
+                                <th>Category</th>
+                                <th>Stock Level</th>
+                                <th>Status</th>
+                                <th>Supplier</th>
+                                <th>Last Updated</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
