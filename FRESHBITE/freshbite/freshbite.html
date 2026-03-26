@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshBite | Fresh & Fast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Fresh<span>Bite</span></div>
+        <div class="nav-actions">
+            <button class="btn btn-outline" onclick="toggleSidebar()">Login</button>
+            <button class="btn btn-primary" onclick="scrollToSection('billing')">
+                Cart <span id="cart-count" class="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <h1>Fresh Food, Fast Delivery</h1>
+        <p>Healthy bites for your busy life</p>
+    </div>
+
+    <div class="container">
+        
+        <div id="billing" class="billing-panel">
+            <h3>Your Order</h3>
+            <div id="cart-items">
+                <p style="color: #888; font-style: italic;">Your cart is empty.</p>
+            </div>
+            <div class="total-row">
+                <span>Total</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">Signature Bowls</h2>
+        <div class="menu-grid" id="menu-container">
+        </div>
+
+        <h2 class="section-title">Fresh Wraps & Rolls</h2>
+        <div class="menu-grid" id="wraps-container">
+        </div>
+
+        <h2 class="section-title">Power Drinks</h2>
+        <div class="menu-grid" id="drinks-container">
+        </div>
+    </div>
+
+    <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+    <div class="sidebar" id="login-sidebar">
+        <div class="sidebar-header">
+            <h2>Welcome Back</h2>
+            <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Welcome to FreshBite!'); toggleSidebar();">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="hello@freshbite.com" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="********" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%">Start Ordering</button>
+            <p style="margin-top: 1rem; font-size: 0.8rem; text-align: center;">
+                New here? <a href="#" style="color: var(--primary)">Create Account</a>
+            </p>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 FreshBite. Fresh food, happy life.</p>
+    </footer>
+
+    <script>
+        // Signature Bowls
+        const bowlItems = [
+            { id: 1, name: "Tropical Poke Bowl", price: 14.99, desc: "Ahi tuna, mango, avocado, seaweed salad, sesame ginger dressing.", icon: "🐟" },
+            { id: 2, name: "Buddha Power Bowl", price: 13.50, desc: "Quinoa, roasted chickpeas, sweet potato, kale, tahini drizzle.", icon: "🥗" },
+            { id: 3, name: "Zen Garden Bowl", price: 12.99, desc: "Edamame, cucumber, shredded carrots, purple cabbage, miso glaze.", icon: "🍃" },
+            { id: 4, name: "Citrus Salmon Bowl", price: 16.50, desc: "Grilled salmon, orange segments, fennel, arugula, citrus vinaigrette.", icon: "🍊" },
+            { id: 5, name: "Spicy Tofu Crunch", price: 11.99, desc: "Crispy tofu, pickled radish, bean sprouts, peanuts, sriracha aioli.", icon: "🌶️" },
+            { id: 6, name: "Mediterranean Glow", price: 13.99, desc: "Falafel, hummus, tabbouleh, olives, feta, lemon herb sauce.", icon: "🧆" },
+        ];
+
+        // Fresh Wraps & Rolls
+        const wrapItems = [
+            { id: 7, name: "Thai Peanut Wrap", price: 10.99, desc: "Grilled chicken, peanut sauce, crunchy veggies, cilantro, rice paper.", icon: "🥜" },
+            { id: 8, name: "Caprese Spinach Wrap", price: 9.50, desc: "Fresh mozzarella, tomato, basil pesto, balsamic glaze, spinach tortilla.", icon: "🍅" },
+            { id: 9, name: "Buffalo Cauliflower Wrap", price: 10.50, desc: "Crispy cauliflower, buffalo sauce, ranch, lettuce, tomato wrap.", icon: "🥬" },
+            { id: 10, name: "Smoked Turkey Club", price: 11.99, desc: "Turkey breast, avocado, bacon, Swiss, chipotle mayo, whole wheat.", icon: "🦃" },
+            { id: 11, name: "Vietnamese Spring Rolls", price: 8.99, desc: "Shrimp, vermicelli, mint, cilantro, hoisin peanut dipping sauce.", icon: "🦐" },
+            { id: 12, name: "Greek Gyro Wrap", price: 10.99, desc: "Lamb, tzatziki, tomato, onion, fries inside, warm pita.", icon: "🥙" },
+        ];
+
+        // Power Drinks
+        const drinkItems = [
+            { id: 13, name: "Electric Green Smoothie", price: 7.99, desc: "Matcha, banana, spinach, almond milk, chia seeds.", icon: "⚡" },
+            { id: 14, name: "Berry Blast Protein", price: 8.50, desc: "Mixed berries, vanilla protein, Greek yogurt, honey.", icon: "🫐" },
+            { id: 15, name: "Golden Turmeric Latte", price: 6.99, desc: "Turmeric, ginger, cinnamon, oat milk, black pepper.", icon: "🌟" },
+            { id: 16, name: "Watermelon Mint Cooler", price: 5.99, desc: "Fresh watermelon, mint leaves, lime, sparkling water.", icon: "🍉" },
+            { id: 17, name: "Cocoa Energy Shake", price: 8.99, desc: "Cacao, espresso, banana, peanut butter, oat milk.", icon: "🍫" },
+            { id: 18, name: "Tropical Immunity", price: 7.50, desc: "Pineapple, mango, ginger, orange, coconut water.", icon: "🥭" },
+        ];
+
+        let cart = [];
+
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalEl = document.getElementById('cart-total');
+        const cartCountEl = document.getElementById('cart-count');
+
+        function renderMenu(containerId, items) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = items.map(item => `
+                <div class="card">
+                    <div class="card-img">${item.icon}</div>
+                    <div class="card-body">
+                        <div class="card-title">${item.name}</div>
+                        <div class="card-desc">${item.desc}</div>
+                        <div class="card-footer">
+                            <span class="price">$${item.price.toFixed(2)}</span>
+                            <button class="btn btn-primary" onclick="addToCart(${item.id}, '${containerId}')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(id, source) {
+            let item;
+            if (source === 'menu-container') item = bowlItems.find(i => i.id === id);
+            else if (source === 'wraps-container') item = wrapItems.find(i => i.id === id);
+            else if (source === 'drinks-container') item = drinkItems.find(i => i.id === id);
+            
+            if (item) {
+                cart.push(item);
+                updateCartUI();
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            cartCountEl.innerText = cart.length;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="color: #888; font-style: italic;">Your cart is empty.</p>';
+            } else {
+                cartItemsContainer.innerHTML = cart.map((item, index) => `
+                    <div class="billing-item">
+                        <span>${item.name}</span>
+                        <span>
+                            $${item.price.toFixed(2)} 
+                            <span style="color:var(--accent); cursor:pointer; margin-left:5px;" onclick="removeFromCart(${index})">&times;</span>
+                        </span>
+                    </div>
+                `).join('');
+            }
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotalEl.innerText = '$' + total.toFixed(2);
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('login-sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if(el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Render all three menus
+        renderMenu('menu-container', bowlItems);
+        renderMenu('wraps-container', wrapItems);
+        renderMenu('drinks-container', drinkItems);
+    </script>
+</body>
+</html>
