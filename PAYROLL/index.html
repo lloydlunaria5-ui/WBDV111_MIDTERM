@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkFlow - Employee Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-briefcase"></i> WorkFlow
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#team" class="nav-link"><i class="fas fa-users"></i> Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#schedule" class="nav-link"><i class="fas fa-calendar"></i> Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#payroll" class="nav-link"><i class="fas fa-wallet"></i> Payroll</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#auth" class="nav-link"><i class="fas fa-user-circle"></i> Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <h1 class="hero-title">Work Smarter, Not Harder</h1>
+                    <p class="hero-desc">Your minimalist workspace for team management, scheduling, and payroll.</p>
+                    <a href="#team" class="btn-cta">View Team</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="section">
+            <div class="container">
+                <h1 class="section-title">Team Members</h1>
+                <p class="section-desc">Manage your workforce efficiently.</p>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">JD</div>
+                        <h3>Jane Doe</h3>
+                        <p>Project Manager</p>
+                        <span class="status-badge active">Active</span>
+                        <button class="btn-view">View Profile</button>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">JS</div>
+                        <h3>Jerald Smith</h3>
+                        <p>Senior Developer</p>
+                        <span class="status-badge active">Active</span>
+                        <button class="btn-view">View Profile</button>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">MT</div>
+                        <h3>Mike Tyson</h3>
+                        <p>Designer</p>
+                        <span class="status-badge away">Away</span>
+                        <button class="btn-view">View Profile</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="section">
+            <div class="container">
+                <h1 class="section-title">Work Schedule</h1>
+                <p class="section-desc">Track your hours and shifts.</p>
+                <div class="schedule-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Shift</th>
+                                <th>Hours</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mon, Oct 28</td>
+                                <td>Morning</td>
+                                <td>8</td>
+                                <td><span class="status-text confirmed">Confirmed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Tue, Oct 29</td>
+                                <td>Afternoon</td>
+                                <td>8</td>
+                                <td><span class="status-text pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>Wed, Oct 30</td>
+                                <td>Morning</td>
+                                <td>8</td>
+                                <td><span class="status-text confirmed">Confirmed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="payroll" class="section">
+            <div class="container">
+                <h1 class="section-title">Payroll</h1>
+                <p class="section-desc">Access your salary information.</p>
+                <div class="payroll-list">
+                    <div class="payroll-item">
+                        <div class="payroll-info">
+                            <i class="fas fa-file-invoice"></i>
+                            <div>
+                                <h4>October 2024</h4>
+                                <p>$5,200.00</p>
+                            </div>
+                        </div>
+                        <a href="#" class="payroll-download"><i class="fas fa-download"></i></a>
+                    </div>
+                    <div class="payroll-item">
+                        <div class="payroll-info">
+                            <i class="fas fa-file-invoice"></i>
+                            <div>
+                                <h4>September 2024</h4>
+                                <p>$5,200.00</p>
+                            </div>
+                        </div>
+                        <a href="#" class="payroll-download"><i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+                <button id="details-btn" class="btn-info"><i class="fas fa-chart-pie"></i> View Details</button>
+                <div id="details-modal" class="info-modal hidden">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h2>Salary Breakdown</h2>
+                        <div class="breakdown">
+                            <p><span>Base Salary:</span> <span>$4,500.00</span></p>
+                            <p><span>Bonus:</span> <span>$500.00</span></p>
+                            <p><span>Overtime:</span> <span>$200.00</span></p>
+                            <hr>
+                            <p class="total"><span>Total:</span> <span>$5,200.00</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="auth" class="section">
+            <div class="container">
+                <h1 class="section-title">Account Access</h1>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    <button class="tab-btn" data-tab="signup"><i class="fas fa-user-plus"></i> Sign Up</button>
+                </div>
+                <form id="login-form" class="auth-form active">
+                    <div class="input-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" placeholder="Email address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-arrow-right"></i> Login</button>
+                </form>
+                <form id="signup-form" class="auth-form">
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" placeholder="Full name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" placeholder="Email address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" placeholder="Create password" required>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-check"></i> Create Account</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
