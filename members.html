@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - LibraryConnect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.location.href='index.html'">LibraryConnect</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-btn">🏠 Search</a></li>
+                <li><a href="members.html" class="nav-btn active">👥 Members</a></li>
+                <li><a href="loans.html" class="nav-btn">📋 Loans</a></li>
+                <li><a href="overdue.html" class="nav-btn">⚠️ Overdue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero" style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);">
+            <h2>Library Members</h2>
+            <p>Manage member accounts and view borrowing history.</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="member-search" placeholder="Search members by name or ID...">
+            <button class="card-btn">🔍 Search Members</button>
+        </div>
+
+        <div class="grid-container">
+            <div class="member-card">
+                <div class="card-icon">👤</div>
+                <div class="card-title">John Doe</div>
+                <div class="card-text">ID: 001</div>
+                <div class="card-text">Member since 2023</div>
+                <div class="card-text">12 books borrowed</div>
+                <div class="card-actions">
+                    <button class="card-btn small" onclick="viewDetails('001')">View Profile</button>
+                    <button class="card-btn small secondary">Edit</button>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="card-icon">👤</div>
+                <div class="card-title">Jane Smith</div>
+                <div class="card-text">ID: 002</div>
+                <div class="card-text">Member since 2022</div>
+                <div class="card-text">8 books borrowed</div>
+                <div class="card-actions">
+                    <button class="card-btn small" onclick="viewDetails('002')">View Profile</button>
+                    <button class="card-btn small secondary">Edit</button>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="card-icon">👤</div>
+                <div class="card-title">Mike Johnson</div>
+                <div class="card-text">ID: 003</div>
+                <div class="card-text">Member since 2024</div>
+                <div class="card-text">3 books borrowed</div>
+                <div class="card-actions">
+                    <button class="card-btn small" onclick="viewDetails('003')">View Profile</button>
+                    <button class="card-btn small secondary">Edit</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="auth-footer">
+            <a href="login.html" class="card-btn">🔐 Member Login</a>
+            <a href="register.html" class="card-btn secondary">📝 Register</a>
+        </div>
+        <p class="footer-text">© 2024 LibraryConnect - Modern Library Management</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

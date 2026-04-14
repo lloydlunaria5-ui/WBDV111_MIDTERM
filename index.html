@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - LibraryConnect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.location.href='index.html'">LibraryConnect</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-btn active">🏠 Search</a></li>
+                <li><a href="members.html" class="nav-btn">👥 Members</a></li>
+                <li><a href="loans.html" class="nav-btn">📋 Loans</a></li>
+                <li><a href="overdue.html" class="nav-btn">⚠️ Overdue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h2>Welcome to LibraryConnect</h2>
+            <p>Your modern library management system. Search, track, and manage your collection with ease.</p>
+            <button class="cta-btn" onclick="document.getElementById('search-input').focus()">Start Exploring</button>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">2,450</div>
+                <div class="stat-label">Total Books</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">180</div>
+                <div class="stat-label">Active Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">45</div>
+                <div class="stat-label">Current Loans</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Overdue Items</div>
+            </div>
+        </div>
+
+        <section class="search-section">
+            <h3>Quick Search</h3>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Enter title, author, or ISBN...">
+                <button class="card-btn" id="search-btn">🔍 Search Books</button>
+            </div>
+
+            <div id="search-results" class="grid-container">
+                <div class="book-card">
+                    <div class="card-icon">📖</div>
+                    <div class="card-title">The Great Gatsby</div>
+                    <div class="card-text">F. Scott Fitzgerald</div>
+                    <div class="card-text">1925</div>
+                    <span class="status active">● Available</span>
+                    <button class="card-btn small" onclick="checkOut(1)">Check Out</button>
+                </div>
+                <div class="book-card">
+                    <div class="card-icon">📚</div>
+                    <div class="card-title">1984</div>
+                    <div class="card-text">George Orwell</div>
+                    <div class="card-text">1949</div>
+                    <span class="status pending">● Checked Out</span>
+                    <button class="card-btn small secondary" onclick="viewDetails(2)">View Details</button>
+                </div>
+                <div class="book-card">
+                    <div class="card-icon">📗</div>
+                    <div class="card-title">To Kill a Mockingbird</div>
+                    <div class="card-text">Harper Lee</div>
+                    <div class="card-text">1960</div>
+                    <span class="status active">● Available</span>
+                    <button class="card-btn small" onclick="checkOut(3)">Check Out</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="auth-footer">
+            <a href="login.html" class="card-btn">🔐 Member Login</a>
+            <a href="register.html" class="card-btn secondary">📝 Register</a>
+        </div>
+        <p class="footer-text">© 2024 LibraryConnect - Modern Library Management</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
