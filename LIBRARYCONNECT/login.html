@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LibraryConnect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.location.href='index.html'">LibraryConnect</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-btn">🏠 Search</a></li>
+                <li><a href="members.html" class="nav-btn">👥 Members</a></li>
+                <li><a href="loans.html" class="nav-btn">📋 Loans</a></li>
+                <li><a href="overdue.html" class="nav-btn">⚠️ Overdue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-page">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="card-icon">🔐</div>
+                <h2>Member Login</h2>
+                <p>Access your account to manage loans and view history.</p>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <button type="submit" class="card-btn full">🔐 Sign In</button>
+                </form>
+                <p class="auth-link">Don't have an account? <a href="register.html">Register here</a></p>
+                <p class="auth-link mt-1"><a href="#">Forgot password?</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-text">© 2024 LibraryConnect - Modern Library Management</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

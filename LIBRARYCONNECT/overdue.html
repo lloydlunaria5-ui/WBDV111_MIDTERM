@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overdue - LibraryConnect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.location.href='index.html'">LibraryConnect</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-btn">🏠 Search</a></li>
+                <li><a href="members.html" class="nav-btn">👥 Members</a></li>
+                <li><a href="loans.html" class="nav-btn">📋 Loans</a></li>
+                <li><a href="overdue.html" class="nav-btn active">⚠️ Overdue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero" style="background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);">
+            <h2>⚠️ Overdue Items</h2>
+            <p>Please return these items promptly to avoid additional fees.</p>
+        </div>
+
+        <div class="grid-container">
+            <div class="overdue-card">
+                <div class="card-icon">⚠️</div>
+                <div class="card-title">Pride and Prejudice</div>
+                <div class="card-text">Borrower: Mike Johnson (ID: 003)</div>
+                <div class="card-text" style="color: #ef4444; font-weight: 600;">Due: Dec 10, 2024</div>
+                <div class="card-text" style="font-weight: 700; color: #b91c1c;">5 days overdue</div>
+                <div class="card-actions">
+                    <button class="card-btn small warning" onclick="sendReminder('003')">📧 Send Reminder</button>
+                    <button class="card-btn small" onclick="returnBook(3)">📥 Process Return</button>
+                </div>
+            </div>
+            <div class="overdue-card">
+                <div class="card-icon">⚠️</div>
+                <div class="card-title">The Catcher in the Rye</div>
+                <div class="card-text">Borrower: John Doe (ID: 001)</div>
+                <div class="card-text" style="color: #ef4444; font-weight: 600;">Due: Dec 05, 2024</div>
+                <div class="card-text" style="font-weight: 700; color: #b91c1c;">10 days overdue</div>
+                <div class="card-actions">
+                    <button class="card-btn small warning" onclick="sendReminder('001')">📧 Send Reminder</button>
+                    <button class="card-btn small" onclick="returnBook(1)">📥 Process Return</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-container mt-2">
+            <div class="stat-card">
+                <div class="stat-number" style="color: #ef4444;">12</div>
+                <div class="stat-label">Total Overdue</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color: #ef4444;">$125</div>
+                <div class="stat-label">Total Fines</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="auth-footer">
+            <a href="login.html" class="card-btn">🔐 Member Login</a>
+            <a href="register.html" class="card-btn secondary">📝 Register</a>
+        </div>
+        <p class="footer-text">© 2024 LibraryConnect - Modern Library Management</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
